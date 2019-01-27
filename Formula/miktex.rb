@@ -1,10 +1,8 @@
 class Miktex < Formula
   desc "TeX & Friends"
   homepage "https://miktex.org/"
-  url "https://miktex.org/download/ctan/systems/win32/miktex/source/miktex-2.9.6500.tar.xz"
-  sha256 "cf9ebc03bafa8bf63f20b84579e1bdf86d95d4a32b881e012efc574069b4c5cb"
-
-  revision 1
+  url "https://miktex.org/download/ctan/systems/win32/miktex/source/miktex-2.9.6930.tar.xz"
+  sha256 "3e976b980ccc371811fa7f63254ebc312306593a791e37b70defe79ba2c3eafb"
 
   devel do
     url "https://github.com/MiKTeX/miktex.git", :branch => "next"
