@@ -21,7 +21,6 @@ class Miktex < Formula
   depends_on "graphite2"
   depends_on "hunspell"
   depends_on "icu4c"
-
   depends_on "jpeg"
   depends_on "libpng"
   depends_on "libtiff"
@@ -38,7 +37,6 @@ class Miktex < Formula
   def install
     mkdir "build" do
       system "cmake", "..",
-             "-DMIKTEX_MPM_AUTO_INSTALL=t",
              "-DMIKTEX_SYSTEM_ETC_FONTS_CONFD_DIR=#{etc}/fonts/conf.d",
              "-DMIKTEX_SYSTEM_VAR_CACHE_DIR=#{var}/cache",
              "-DMIKTEX_SYSTEM_VAR_LIB_DIR=#{var}/lib",
