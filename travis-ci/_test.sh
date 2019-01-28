@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 cd "${TRAVIS_BUILD_DIR}"
 
 git clone https://github.com/MiKTeX/miktex-testing
