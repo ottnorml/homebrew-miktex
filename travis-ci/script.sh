@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-set -ev
+set -e
 
 if [ "${MIKTEX_NEXT}" = "yes" ]; then
     installoptions=--devel
@@ -10,8 +10,14 @@ else
 fi
 
 echo Installing MiKTeX version: `brew info --json=v1 miktex | jq ".[0].versions.${versionname}"`
-brew install --display-times --verbose ${installoptions} miktex
-initexmf --report
+
+cmd="brew install --display-times --verbose ${installoptions} miktex"
+echo "$cmd"
+${cmd}
+
+cmd="initexmf --report"
+echo "$cmd"
+${cmd}
 
 . "${TRAVIS_BUILD_DIR}/travis-ci/_install.sh"
 . "${TRAVIS_BUILD_DIR}/travis-ci/_test.sh"
