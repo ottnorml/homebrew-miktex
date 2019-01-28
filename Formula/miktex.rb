@@ -31,6 +31,7 @@ class Miktex < Formula
   depends_on "pixman"
   depends_on "popt"
   depends_on "potrace"
+  depends_on "qt"
   depends_on "uriparser"
   depends_on "xz"
 
