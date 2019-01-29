@@ -9,9 +9,14 @@ matrix:
     - os: osx
       osx_image: xcode9.2
 
-before_install: ./travis-ci/before_install.sh
+before_install:
+  - wget https://raw.githubusercontent.com/m3t/travis_wait/master/travis_wait && chmod +x travis_wait
+  - ./travis-ci/before_install.sh
 before_script: ./travis-ci/before_script.sh
-script: ./travis-ci/script.sh
+script:
+  - ./travis_wait ./travis-ci/script.sh
+#  - `travis_wait` is necessary in order to avoid execution cancellation by Travis CI after 10 minutes without output
+#     displaying 1000 lines with `tail` causes 4MB log limit to be exceeded
 after_failure: ./travis-ci/after_failure.sh
 
 notifications:
